@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+  <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <title>Uniform</title> 
+
+    <!-- stylesheets --> 
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="css/uniform.default.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <!-- javascripts --> 
+    <script type="text/javascript" src="js/jquery.js"></script> 
+    <script type="text/javascript" src="js/jquery.uniform.js"></script>
+    <script type='text/javascript'>
+      $(function() {
+        $("input, select, textarea").uniform();
+      });
+    </script>
+
+  </head>
+  <body>
+    <h1>Uniform</h1>
+    <h2>Sexy forms with jQuery</h2>
+    
+    <form>
+      <label>Select Dropdown</label>
+      <select>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+      </select>
+
+      <label>File Upload</label>
+      <input type="file" />
+
+      <label>
+        <input type="radio" value="radio1"> Radio 1
+      </label>
+      <label>
+        <input checked="checked" type="radio" value="radio2"> Radio 2
+      </label>
+      <label>
+        <input type="radio" value="radio3"> Radio 3
+      </label><br /> 
+
+      <label>
+        <input type="checkbox" value="check1"> Checkbox 1
+      </label>
+      <label>
+        <input checked="checked" type="checkbox" value="check2"> Checkbox 2
+      </label>
+      <label>
+        <input type="checkbox" value="check3"> Checkbox 3
+      </label>
+    </form>
+    
+  </body>
+</html>

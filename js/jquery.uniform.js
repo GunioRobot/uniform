@@ -41,7 +41,8 @@ Enjoy!
 (function($) {
   $.uniform = {
     options: {
-      selectClass:   'selector',
+      textClass: 'text',
+      selectClass: 'selector',
       radioClass: 'radio',
       checkboxClass: 'checker',
       fileClass: 'uploader',
@@ -80,6 +81,55 @@ Enjoy!
         }
         setTimeout(resetThis, 10);
       });
+    }
+
+    function doText(elem){
+    
+      var divTag = $('<div />'),
+          spanTag = $('<span />');
+
+      divTag.addClass(options.textClass);
+
+      if(options.useID){
+        divTag.attr("id", options.idPrefix+"-"+elem.attr("id"));
+      }
+
+      elem.wrap(divTag);
+      elem.wrap(spanTag);
+
+      //redefine variables
+      spanTag = elem.parent("span");
+      divTag = spanTag.parent("div");
+
+      //actions
+      elem.focus(function(){
+        divTag.addClass(options.focusClass);
+      })
+      .blur(function(){
+        divTag.removeClass(options.focusClass);
+      })
+      .mousedown(function() {
+        if(!$(elem).is(":disabled")){
+          divTag.addClass(options.activeClass);
+        }
+      })
+      .mouseup(function() {
+        divTag.removeClass(options.activeClass);
+      })
+      .hover(function() {
+        divTag.addClass(options.hoverClass);
+      }, function() {
+        divTag.removeClass(options.hoverClass);
+      });
+
+      //handle defaults
+      if(elem.attr("disabled")){
+        //box is checked by default, check our box
+        divTag.addClass(options.disabledClass);
+      }
+     
+      storeElement(elem);
+
     }
 
     function doSelect(elem){
@@ -394,7 +444,19 @@ Enjoy!
         //function to reset all classes
         $e = $(this);
 
-        if($e.is("select")){
+        if($e.is(":text")){
+          //element is a input text
+          divTag = $e.parent("div");
+
+          divTag.removeClass(options.hoverClass+" "+options.focusClass+" "+options.activeClass);
+
+          if($e.is(":disabled")){
+            divTag.addClass(options.disabledClass);
+          }else{
+            divTag.removeClass(options.disabledClass);
+          }
+
+        }else if($e.is("select")){
           //element is a select
           spanTag = $e.siblings("span");
           divTag = $e.parent("div");
@@ -466,7 +528,10 @@ Enjoy!
       if($.support.selectOpacity){
         var elem = $(this);
 
-        if(elem.is("select")){
+        if(elem.is(":text")){
+          //element is a input text
+          doText(elem);
+        }else if(elem.is("select")){
           //element is a select
           if(elem.attr("multiple") != true){
             //element is not a multi-select

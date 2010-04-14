@@ -15,6 +15,8 @@ http://pixelmatrixdesign.com/uniform/themer.html
 
 /* Global Declaration */
 
+div.text,
+div.text span,
 div.selector, 
 div.selector span, 
 div.checker span, 
@@ -25,10 +27,12 @@ div.uploader span.action {
   background-repeat: no-repeat;
 }
 
+.text,
 .selector, 
 .radio, 
 .checker, 
-.uploader, 
+.uploader,
+.text *,
 .selector *, 
 .radio *, 
 .checker *, 
@@ -38,6 +42,24 @@ div.uploader span.action {
 }
 
 /* SPRITES */
+
+/* Text */
+
+div.text {
+  background-position: right -381px;
+  height: 28px; 
+}
+
+div.text span {
+  background-position: 0px -297px;
+  height: 28px;
+  display: block;
+}
+
+div.text input {
+  background: none;
+  border: 0;
+}
 
 /* Select */
 
@@ -242,7 +264,7 @@ div.uploader {
 }
 
 div.uploader span.action {
-  background-position: right -409px;
+  background-position: right -493px;
   height: 24px;
   line-height: 24px;
 }
@@ -263,19 +285,19 @@ div.uploader:hover {
 div.uploader.focus span.action,
 div.uploader.hover span.action,
 div.uploader:hover span.action {
-  background-position: right -437px;
+  background-position: right -521px;
 }
 
 div.uploader.active span.action,
 div.uploader:active span.action {
-  background-position: right -465px;
+  background-position: right -549px;
 }
 
 div.uploader.focus.active span.action,
 div.uploader:focus.active span.action,
 div.uploader.focus:active span.action,
 div.uploader:focus:active span.action {
-  background-position: right -493px;
+  background-position: right -577px;
 }
 
 div.uploader.disabled {
@@ -287,6 +309,24 @@ div.uploader.disabled span.action {
 }
 
 /* PRESENTATION */
+
+/* Text */
+div.text {
+  margin-bottom: 20px;
+  width: 190px;
+}
+
+div.text span {
+  width: 180px;
+}
+
+div.text input {
+  color: #777;
+  width: 170px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  padding: 7px 0 3px 10px;
+}
 
 /* Select */
 div.selector {
@@ -370,8 +410,29 @@ Not advised to edit stuff below this line
 -----------------------------------------------------
 */
 
-.selector select:focus, .radio input:focus, .checker input:focus, uploader input:focus {
+.text input:focus, .selector select:focus, .radio input:focus, .checker input:focus, uploader input:focus {
   outline: 0;
+}
+
+/* Text */
+
+div.text {
+  position: relative;
+  float: left;
+  overflow: hidden;
+}
+
+div.text span {
+  display: block;
+  overflow: hidden;
+}
+
+div.text input {
+  display: block;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Select */

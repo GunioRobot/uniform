@@ -21,7 +21,7 @@ div.selector,
 div.selector span, 
 div.checker span, 
 div.radio span, 
-div.uploader, 
+div.uploader span.filename, 
 div.uploader span.action {
   background-image: url(../images/sprite.png);
   background-repeat: no-repeat;
@@ -259,7 +259,6 @@ div.radio.disabled.active span.checked {
 /* Uploader */
 
 div.uploader {
-  background-position: 0px -297px;
   height: 28px;
 }
 
@@ -270,15 +269,21 @@ div.uploader span.action {
 }
 
 div.uploader span.filename {
+  background-position: 0px -297px;
   height: 24px;
   /* change this line to adjust positioning of filename area */
-  margin: 2px 0px 2px 2px;
   line-height: 24px;
 }
 
-div.uploader.focus,
-div.uploader.hover,
-div.uploader:hover {
+div.uploader span.action span {
+  height: 24px;
+  /* change this line to adjust positioning of filename area */
+  line-height: 24px;
+}
+
+div.uploader.focus span.filename,
+div.uploader.hover span.filename,
+div.uploader:hover span.filename {
   background-position: 0px -353px;
 }
 
@@ -325,6 +330,7 @@ div.text input {
   width: 170px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
+  text-shadow: #fff 0px 1px 0px;
   padding: 7px 0 3px 10px;
 }
 
@@ -378,15 +384,18 @@ div.uploader span.action {
   width: 85px;
   text-align: center;
   text-shadow: #fff 0px 1px 0px;
-  background-color: #fff;
   font-size: 11px;
   font-weight: bold;
+}
+
+div.uploader span.action span {
+  display: block;
+  border-left: solid 1px #bbb;
 }
 
 div.uploader span.filename {
   color: #777;
   width: 82px;
-  border-right: solid 1px #bbb;
   font-size: 11px;
 }
 
@@ -516,7 +525,7 @@ div.uploader span.action {
 }
 
 div.uploader span.filename {
-  padding: 0px 10px;
+  padding: 2px 10px;
   float: left;
   display: block;
   overflow: hidden;

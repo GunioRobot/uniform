@@ -339,7 +339,8 @@ Enjoy!
 
       var divTag = $('<div />'),
           filenameTag = $('<span>'+options.fileDefaultText+'</span>'),
-          btnTag = $('<span>'+options.fileBtnText+'</span>');
+          btnTag = $('<span />');
+          textBtnTag = $('<span>'+options.fileBtnText+'</span>');
 
       divTag.addClass(options.fileClass);
       filenameTag.addClass(options.filenameClass);
@@ -351,6 +352,7 @@ Enjoy!
 
       //wrap with the proper elements
       $el.wrap(divTag);
+      btnTag.html(textBtnTag);
       $el.after(btnTag);
       $el.after(filenameTag);
 

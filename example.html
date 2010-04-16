@@ -2,11 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml"> 
   <head> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-    <title>Uniform</title> 
+    <title>Uniform - Sexy forms with jQuery</title> 
 
     <!-- stylesheets --> 
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="css/uniform.default.css" rel="stylesheet" type="text/css" media="screen" />
+    <style type="text/css">
+      body {
+        background: silver;
+        font: 12px/150% "Helvetica", Aria, Verdana, sans-serif;
+      }
+
+      label {
+        display: block;
+        clear: both;
+      }
+    </style>
 
     <!-- javascripts --> 
     <script type="text/javascript" src="js/jquery.js"></script> 
@@ -37,13 +47,13 @@
       <input type="file" />
 
       <label>
-        <input type="radio" value="radio1"> Radio 1
+        <input type="radio" name="radio" value="radio1"> Radio 1
       </label>
       <label>
-        <input checked="checked" type="radio" value="radio2"> Radio 2
+        <input checked="checked" type="radio" name="radio" value="radio2"> Radio 2
       </label>
       <label>
-        <input type="radio" value="radio3"> Radio 3
+        <input type="radio" name="radio" value="radio3"> Radio 3
       </label><br /> 
 
       <label>

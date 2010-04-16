@@ -446,7 +446,7 @@ Enjoy!
         //function to reset all classes
         $e = $(this);
 
-        if($e.is(":text")){
+        if($e.is(":text") || $e.is(":password")){
           //element is a input text
           divTag = $e.parent("div");
 
@@ -530,7 +530,7 @@ Enjoy!
       if($.support.selectOpacity){
         var elem = $(this);
 
-        if(elem.is(":text")){
+        if(elem.is(":text") || elem.is(":password")){
           //element is a input text
           doText(elem);
         }else if(elem.is("select")){
